@@ -3,13 +3,13 @@
 
 ### 报错排查
 
-**开机时遇到类似报错：**
+开机时遇到类似报错：
 
 ```bash
 Error found when loading /etc/profile: /etc/init.d/SecoClientPromoteService.sh:31:[[:not found
 ```
 
-**问题原因：**secoclient安装时写入的开机启动脚本第31行，使用了dash不支持的语法，而基于Ubuntu的系统sudo执行时默认解释器是dash，导致报错。
+问题原因：secoclient安装时写入的开机启动脚本第31行，使用了dash不支持的语法，而基于Ubuntu的系统sudo执行时默认解释器是dash，导致报错。
 
 ```bash
 if [[ $OS =~ "Ubuntu" ]] #ubuntu启动过程
